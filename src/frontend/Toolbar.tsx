@@ -971,8 +971,11 @@ export default function Toolbar() {
 		if ( ! target?.serverId || ! config ) {
 			return;
 		}
+		// Snapshot before the optimistic mutation so we can roll back if the
+		// server rejects the change. Without this a failed PATCH would leave
+		// the UI out of sync (e.g. a verified pin would have already disappeared).
+		const previous = annotations;
 		setReviewIndex( null );
-		// Optimistically update or remove (verified pins disappear).
 		setAnnotations( ( prev ) => {
 			if ( nextStatus === 'verified' ) {
 				return prev.filter( ( _, i ) => i !== index );
@@ -999,6 +1002,7 @@ export default function Toolbar() {
 			}
 			showToast( successToast );
 		} catch ( err ) {
+			setAnnotations( previous );
 			showToast( failureToast );
 		}
 	}

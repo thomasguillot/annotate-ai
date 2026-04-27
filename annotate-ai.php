@@ -737,7 +737,7 @@ final class Annotate_AI {
 			'note'            => sanitize_textarea_field( $params['note'] ?? '' ),
 			'selector'        => sanitize_text_field( $params['selector'] ?? '' ),
 			'element_tag'     => sanitize_text_field( $params['element_tag'] ?? '' ),
-			'element_text'    => mb_substr( sanitize_text_field( $params['element_text'] ?? '' ), 0, 200 ),
+			'element_text'    => self::truncate( sanitize_text_field( $params['element_text'] ?? '' ), 200 ),
 			'computed_styles' => self::sanitize_styles( $params['computed_styles'] ?? [] ),
 			'viewport'        => [
 				'width'  => absint( $viewport['width'] ?? 0 ),
@@ -756,6 +756,24 @@ final class Annotate_AI {
 		}
 
 		return $annotation;
+	}
+
+	/**
+	 * Truncate a string to a max character count.
+	 *
+	 * Prefers mb_substr when the mbstring extension is available so multi-byte
+	 * characters aren't split mid-codepoint, but falls back to substr() since
+	 * mbstring isn't a hard WordPress requirement.
+	 *
+	 * @param string $str    Source string.
+	 * @param int    $length Maximum length in characters.
+	 * @return string
+	 */
+	private static function truncate( string $str, int $length ): string {
+		if ( function_exists( 'mb_substr' ) ) {
+			return mb_substr( $str, 0, $length );
+		}
+		return substr( $str, 0, $length );
 	}
 
 	/**

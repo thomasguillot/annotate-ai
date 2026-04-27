@@ -225,7 +225,10 @@ final class SanitizationTest extends TestCase {
 		$result = $this->call( 'build_annotation', [
 			[ 'selector' => 'p', 'element_text' => $long ],
 		] );
-		$this->assertSame( 200, mb_strlen( $result['element_text'] ) );
+		// strlen() is fine here because the input is ASCII; using mb_strlen
+		// would require the mbstring extension which isn't guaranteed in
+		// every PHPUnit environment.
+		$this->assertSame( 200, strlen( $result['element_text'] ) );
 	}
 
 	public function test_build_annotation_normalises_breakpoint() {
