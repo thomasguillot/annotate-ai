@@ -1,0 +1,34 @@
+{
+	"name": "annotate-ai",
+	"version": "1.0.0",
+	"description": "Point-and-click design feedback for AI agents. Annotate any element on your WordPress site, submit structured feedback, and let your AI agent action it.",
+	"private": true,
+	"scripts": {
+		"build": "wp-scripts build",
+		"start": "wp-scripts start",
+		"lint:js": "wp-scripts lint-js src/",
+		"lint:css": "wp-scripts lint-style 'src/**/*.{css,scss}'",
+		"lint:pkg-json": "wp-scripts lint-pkg-json",
+		"lint": "npm run lint:js && npm run lint:css && npm run lint:pkg-json",
+		"format": "wp-scripts format src/",
+		"check-types": "tsc --noEmit",
+		"test:unit": "wp-scripts test-unit-js",
+		"makepot": "wp i18n make-pot . languages/annotate-ai.pot --slug=annotate-ai --domain=annotate-ai --exclude=node_modules,src",
+		"makejson": "wp i18n make-json languages --no-purge && node bin/fix-json-sources.mjs",
+		"makemo": "wp i18n make-mo languages",
+		"i18n": "npm run makepot && npm run makemo && npm run makejson",
+		"plugin-zip": "wp-scripts plugin-zip"
+	},
+	"devDependencies": {
+		"@types/jest": "^30.0.0",
+		"@wordpress/api-fetch": "^7.44.0",
+		"@wordpress/base-styles": "^6.20.0",
+		"@wordpress/components": "^32.6.0",
+		"@wordpress/element": "^6.44.0",
+		"@wordpress/i18n": "^6.17.0",
+		"@wordpress/scripts": "^32.0.0",
+		"typescript": "^6.0.0"
+	},
+	"license": "GPL-2.0-or-later",
+	"author": "Thomas Guillot"
+}

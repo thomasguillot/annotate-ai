@@ -1,0 +1,205 @@
+/* Annotate AI — Frontend Toolbar.
+ *
+ * Most styling comes from @wordpress/components. Only positioning and
+ * shape overrides for the floating UI live here. */
+
+@use "~@wordpress/base-styles/colors" as wp-colors;
+@use "~@wordpress/base-styles/variables" as wp-vars;
+
+// ── Screen-reader-only utility ──
+.aai-sr-only {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+// ── Admin bar toggle ──
+// Render the dashicon glyph (post-status / "annotate") on the admin bar item.
+#wpadminbar #wp-admin-bar-annotate-ai .ab-icon::before {
+	content: "\f173";
+	top: 2px;
+}
+
+// Active state when annotation mode is ON — mirrors the admin bar's
+// own focus/hover style so it feels native rather than a custom highlight.
+#wpadminbar:not(.mobile) #wp-admin-bar-annotate-ai.is-active > .ab-item {
+	background: #2c3338;
+	color: #72aee6;
+}
+
+// ── Floating toggle (fallback when admin bar is hidden) ──
+.components-button.aai-floating-toggle {
+	position: fixed;
+	bottom: wp-vars.$grid-unit-30;
+	right: wp-vars.$grid-unit-30;
+	z-index: 99999;
+	box-shadow: wp-vars.$elevation-small;
+}
+
+// ── Pinned annotations on the page ──
+.components-button.aai-pin {
+	position: absolute;
+	z-index: 99996;
+	width: 28px;
+	height: 28px;
+	min-width: 28px;
+	padding: 0;
+	border-radius: 50%;
+	font-weight: 700;
+	box-shadow: wp-vars.$elevation-small;
+	transform: translate(-50%, -50%);
+
+	// Status-driven pin colors. Open is the default WP primary.
+	&[data-status="in_progress"] {
+		background: wp-colors.$alert-yellow;
+
+		&:hover:not(:disabled),
+		&:focus:not(:disabled) {
+			background: wp-colors.$alert-yellow;
+		}
+	}
+
+	&[data-status="done"] {
+		background: wp-colors.$alert-green;
+
+		&:hover:not(:disabled),
+		&:focus:not(:disabled) {
+			background: wp-colors.$alert-green;
+			opacity: 0.85;
+		}
+	}
+
+	&:disabled {
+		opacity: 1; // override wp-components dim-on-disabled for status display
+		cursor: default;
+	}
+}
+
+// ── "Submit N" pill ──
+.components-button.aai-submit-all {
+	position: fixed;
+	bottom: 84px;
+	right: wp-vars.$grid-unit-30;
+	z-index: 99999;
+	box-shadow: wp-vars.$elevation-small;
+}
+
+// ── Element highlight (set on the page element being hovered) ──
+.aai-highlight {
+	outline: 2px solid var(--wp-admin-theme-color, #3858e9) !important;
+	outline-offset: 2px !important;
+	cursor: crosshair !important;
+}
+
+// ── Theme-leak isolation ──
+// `<Modal>` and `<Snackbar>` render into <body> via React portals, so they
+// sit *outside* our component subtree. The pins, submit-all pill, and
+// floating toggle render inside `#aai-root` (also a child of <body>). All
+// three regions share the public theme's CSS scope, and themes commonly
+// target bare `button` / `a` / `input` with rules wp-components doesn't
+// bother to reset — including `:hover` rules with class-selector
+// specificity that beat wp-components on equal ground.
+// !important is used only on properties wp-components never sets itself,
+// so we don't fight its own styling.
+#aai-root,
+.components-modal__frame,
+.components-snackbar {
+	font-family: wp-vars.$default-font;
+
+	.components-button {
+		font-family: wp-vars.$default-font;
+		text-transform: none !important;
+		letter-spacing: normal !important;
+		text-shadow: none !important;
+		transform: none !important;
+	}
+
+	a {
+		text-decoration: none;
+		text-shadow: none;
+	}
+
+	input,
+	textarea,
+	select {
+		font-family: inherit;
+		text-transform: none;
+		letter-spacing: normal;
+	}
+}
+
+// ── Modal selector display ──
+// Typography for the read-only "Selected element: …" line inside <Modal>.
+// Spacing comes from the <VStack> wrapper, not from this rule.
+.aai-modal .aai-form-selector {
+	margin: 0;
+	font-size: wp-vars.$font-size-x-small;
+	font-family: wp-vars.$font-family-mono;
+	line-height: wp-vars.$font-line-height-x-small;
+	color: wp-colors.$gray-700;
+	word-break: break-all;
+	background: wp-colors.$gray-100;
+	padding: wp-vars.$grid-unit-05 wp-vars.$grid-unit-10;
+	border-radius: wp-vars.$radius-block-ui;
+}
+
+// ── Review modal lists ──
+.aai-review-modal {
+	.aai-review-list {
+		margin: wp-vars.$grid-unit-05 0 0;
+		padding-left: wp-vars.$grid-unit-20;
+		font-size: wp-vars.$font-size-medium;
+		line-height: wp-vars.$default-line-height;
+	}
+
+	.aai-review-resolution {
+		margin: wp-vars.$grid-unit-05 0 0;
+		font-size: wp-vars.$font-size-medium;
+		line-height: wp-vars.$default-line-height;
+
+		&--empty {
+			color: wp-colors.$gray-700;
+			font-style: italic;
+		}
+	}
+}
+
+// ── Color picker field inside the modal ──
+.aai-modal .aai-color-field {
+	display: flex;
+	flex-direction: column;
+	gap: wp-vars.$grid-unit-05;
+}
+
+.aai-modal .aai-color-toggle {
+	gap: wp-vars.$grid-unit-10;
+	justify-content: flex-start;
+	width: 100%;
+
+	.aai-color-swatch {
+		display: inline-block;
+		width: wp-vars.$grid-unit-20;
+		height: wp-vars.$grid-unit-20;
+		border-radius: wp-vars.$radius-block-ui;
+		border: wp-vars.$border-width solid wp-colors.$gray-300;
+		flex-shrink: 0;
+	}
+}
+
+// ── Snackbar position ──
+// Bottom-center, the conventional toast position.
+.aai-snackbar-region {
+	position: fixed;
+	bottom: wp-vars.$grid-unit-30;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 99999;
+	max-width: 400px;
+}

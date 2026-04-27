@@ -1,0 +1,73 @@
+/* Annotate AI — Admin Styles */
+
+@use "~@wordpress/base-styles/colors" as wp-colors;
+@use "~@wordpress/base-styles/variables" as wp-vars;
+
+.annotate-ai-admin {
+	max-width: wp-vars.$content-width;
+}
+
+.annotate-ai-card .components-card__header h2 {
+	margin: 0;
+	font-size: wp-vars.$font-size-medium;
+	font-weight: 600;
+	line-height: wp-vars.$default-line-height;
+}
+
+.annotate-ai-admin code.aai-pull-url {
+	display: block;
+	font-family: wp-vars.$font-family-mono;
+	font-size: wp-vars.$font-size-x-small;
+	line-height: wp-vars.$default-line-height;
+	background: wp-colors.$gray-100;
+	color: wp-colors.$gray-900;
+	padding: wp-vars.$grid-unit-10 wp-vars.$grid-unit-15;
+	border-radius: wp-vars.$radius-block-ui;
+	word-break: break-all;
+}
+
+.annotate-ai-status {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	font-size: wp-vars.$font-size-medium;
+
+	&::before {
+		content: "";
+		display: inline-block;
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+	}
+
+	// Match the toolbar's pin colour-coding so the admin table reads the
+	// same way: open = theme blue, in_progress = yellow, done/verified = green.
+	// `resolved` is kept as a legacy alias for any pre-flow data.
+	&[data-status="open"]::before {
+		background-color: var(--wp-admin-theme-color, #3858e9);
+	}
+
+	&[data-status="in_progress"]::before {
+		background-color: wp-colors.$alert-yellow;
+	}
+
+	&[data-status="done"]::before,
+	&[data-status="verified"]::before,
+	&[data-status="resolved"]::before {
+		background-color: wp-colors.$alert-green;
+	}
+}
+
+/* Fallback in case core's screen-reader-text isn't available on this screen. */
+.annotate-ai-admin .screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
