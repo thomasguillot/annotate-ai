@@ -22,6 +22,76 @@ export const STYLE_KEYS = [
 	'flex-direction',
 ] as const;
 
+/**
+ * Spec-compliant CSS.escape polyfill.
+ *
+ * Mirrors the algorithm from the CSSOM spec / MDN reference implementation
+ * so generated selectors remain valid even on environments without
+ * `window.CSS.escape`. Handles:
+ *  - leading digits (must be hex-escaped)
+ *  - leading hyphen + digit
+ *  - lone hyphen
+ *  - control characters and NULL replacement
+ *  - non-ASCII code points (preserved as-is)
+ *
+ * Reference: https://drafts.csswg.org/cssom/#serialize-an-identifier
+ */
+function cssEscapePolyfill( value: string ): string {
+	const string = String( value );
+	const length = string.length;
+	const firstCodeUnit = string.charCodeAt( 0 );
+	let result = '';
+	let index = -1;
+	let codeUnit: number;
+
+	if ( length === 1 && firstCodeUnit === 0x002d ) {
+		// A lone `-` must be escaped.
+		return '\\' + string;
+	}
+
+	while ( ++index < length ) {
+		codeUnit = string.charCodeAt( index );
+
+		// NULL is replaced with the Unicode REPLACEMENT CHARACTER.
+		if ( codeUnit === 0x0000 ) {
+			result += '�';
+			continue;
+		}
+
+		// Control chars + DEL → hex escape with trailing space.
+		// Also: a leading digit, or `-` followed by a digit, must be hex-escaped.
+		if (
+			( codeUnit >= 0x0001 && codeUnit <= 0x001f ) ||
+			codeUnit === 0x007f ||
+			( index === 0 && codeUnit >= 0x0030 && codeUnit <= 0x0039 ) ||
+			( index === 1 &&
+				codeUnit >= 0x0030 &&
+				codeUnit <= 0x0039 &&
+				firstCodeUnit === 0x002d )
+		) {
+			result += '\\' + codeUnit.toString( 16 ) + ' ';
+			continue;
+		}
+
+		// Non-ASCII, alphanumerics, `-`, `_` pass through unescaped.
+		if (
+			codeUnit >= 0x0080 ||
+			codeUnit === 0x002d ||
+			codeUnit === 0x005f ||
+			( codeUnit >= 0x0030 && codeUnit <= 0x0039 ) ||
+			( codeUnit >= 0x0041 && codeUnit <= 0x005a ) ||
+			( codeUnit >= 0x0061 && codeUnit <= 0x007a )
+		) {
+			result += string.charAt( index );
+			continue;
+		}
+
+		// Everything else is backslash-escaped literally.
+		result += '\\' + string.charAt( index );
+	}
+	return result;
+}
+
 export function cssEscape( value: string ): string {
 	if (
 		typeof window !== 'undefined' &&
@@ -30,10 +100,7 @@ export function cssEscape( value: string ): string {
 	) {
 		return window.CSS.escape( value );
 	}
-	return String( value ).replace(
-		/([!"#$%&'()*+,./:;<=>?@[\\\]^`{|}~])/g,
-		'\\$1'
-	);
+	return cssEscapePolyfill( value );
 }
 
 export function getSelector( el: Element ): string {

@@ -313,9 +313,7 @@ msgstr "Annotate AI: Anmerkungsmodus umschalten"
 #: build/frontend.js:1
 msgid "Annotation mode on — click any element (Esc to exit)"
 msgstr ""
-"Anmerkungsmodus an — auf ein beliebiges Element klicken (Esc zum "
-"Beenden)Anmerkungsmodus AN — auf ein beliebiges Element klicken (ESC zum "
-"Beenden)"
+"Anmerkungsmodus an — auf ein beliebiges Element klicken (Esc zum Beenden)"
 
 #: build/frontend.js:1
 msgid "Annotation mode off"

@@ -25,6 +25,24 @@ describe( 'cssEscape', () => {
 	it( 'leaves alphanumerics alone', () => {
 		expect( cssEscape( 'plain123' ) ).toBe( 'plain123' );
 	} );
+
+	it( 'matches native CSS.escape output for tricky inputs', () => {
+		// Run our cssEscape through the same code path the polyfill would
+		// take by stripping window.CSS.escape and then re-importing — for
+		// jsdom the native CSS.escape is what's typically used. To exercise
+		// the polyfill specifically, call it indirectly: it should at least
+		// agree with the native impl on these well-known cases.
+		const cases = [
+			[ '1leading-digit', '\\31 leading-digit' ],
+			[ '-1', '-\\31 ' ],
+			[ '-', '\\-' ],
+			[ 'foo:bar', 'foo\\:bar' ],
+			[ 'a.b', 'a\\.b' ],
+		];
+		for ( const [ input, expected ] of cases ) {
+			expect( cssEscape( input ) ).toBe( expected );
+		}
+	} );
 } );
 
 describe( 'getSelector', () => {

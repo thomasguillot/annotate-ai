@@ -313,9 +313,7 @@ msgstr "Annotate AI: attiva/disattiva la modalità annotazione"
 #: build/frontend.js:1
 msgid "Annotation mode on — click any element (Esc to exit)"
 msgstr ""
-"Modalità annotazione attiva — clicca un elemento qualsiasi (Esc per "
-"uscire)Modalità annotazione ATTIVA — clicca un elemento qualsiasi (ESC per "
-"uscire)"
+"Modalità annotazione attiva — clicca un elemento qualsiasi (Esc per uscire)"
 
 #: build/frontend.js:1
 msgid "Annotation mode off"

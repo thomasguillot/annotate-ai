@@ -327,13 +327,13 @@ msgstr "注釈 %d"
 #: build/frontend.js:3
 msgid "%d annotation sent to agent"
 msgid_plural "%d annotations sent to agent"
-msgstr[0] ""
+msgstr[0] "%d 件の注釈をエージェントに送信しました"
 
 #. translators: %d: number of annotations saved.
 #: build/frontend.js:4
 msgid "%d annotation saved"
 msgid_plural "%d annotations saved"
-msgstr[0] ""
+msgstr[0] "%d 件の注釈を保存しました"
 
 #: build/frontend.js:4
 msgid "Failed to send — try again"
@@ -351,7 +351,7 @@ msgstr "送信中…"
 #: build/frontend.js:5
 msgid "Send %d annotation"
 msgid_plural "Send %d annotations"
-msgstr[0] ""
+msgstr[0] "%d 件の注釈を送信"
 
 #: build/frontend.js:5
 msgid "Add Annotation"
@@ -365,7 +365,7 @@ msgstr "追加"
 #: build/frontend.js:6
 msgid "Annotation added (%d pending)"
 msgid_plural "Annotation added (%d pending)"
-msgstr[0] ""
+msgstr[0] "注釈を追加しました (保留中 %d 件)"
 
 #: build/frontend.js:6
 msgid "Annotation saved"
