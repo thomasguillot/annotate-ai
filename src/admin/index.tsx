@@ -178,7 +178,7 @@ function AdminPage() {
 			.then( () => {
 				setAnnotations( ( prev ) =>
 					prev.map( ( a ) =>
-						a.id === id ? { ...a, status: 'resolved' } : a
+						a.id === id ? { ...a, status: 'done' } : a
 					)
 				);
 			} )
@@ -193,13 +193,17 @@ function AdminPage() {
 	}
 
 	function clearResolved() {
+		// Server-side this clears `verified` (and legacy `resolved`) entries.
+		// Admin UI also drops `done` locally to match the "completed" bucket
+		// shown in the count.
+		const completed = new Set( [ 'done', 'verified', 'resolved' ] );
 		apiFetch( {
 			path: '/annotate-ai/v1/annotations/resolved',
 			method: 'DELETE',
 		} )
 			.then( () => {
 				setAnnotations( ( prev ) =>
-					prev.filter( ( a ) => a.status !== 'resolved' )
+					prev.filter( ( a ) => ! completed.has( a.status ) )
 				);
 			} )
 			.catch( ( err: Error ) => {
@@ -215,9 +219,15 @@ function AdminPage() {
 			} );
 	}
 
-	const openCount = annotations.filter( ( a ) => a.status === 'open' ).length;
-	const resolvedCount = annotations.filter(
-		( a ) => a.status === 'resolved'
+	// Mirror the toolbar's status flow. Anything past 'open' is in some
+	// stage of progress / completion; anything verified or done counts as
+	// "resolved" from the admin's perspective. 'resolved' is kept as an
+	// alias for any pre-flow data.
+	const openCount = annotations.filter(
+		( a ) => a.status === 'open' || a.status === 'in_progress'
+	).length;
+	const resolvedCount = annotations.filter( ( a ) =>
+		[ 'done', 'verified', 'resolved' ].includes( a.status )
 	).length;
 
 	return (
@@ -526,8 +536,8 @@ function AdminPage() {
 														<td>{ a.note }</td>
 														<td>{ a.user }</td>
 														<td>
-															{ a.status ===
-																'open' && (
+															{ ( a.status === 'open' ||
+																a.status === 'in_progress' ) && (
 																<Button
 																	variant="secondary"
 																	size="small"

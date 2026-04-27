@@ -555,8 +555,10 @@ final class Annotate_AI {
 
 		foreach ( $annotations as &$a ) {
 			if ( ( $a['id'] ?? '' ) === $id ) {
-				$a['status']          = 'resolved';
-				$a['resolved_at']     = current_time( 'c' );
+				// Align with the documented open → in_progress → done → verified flow.
+				// This endpoint is a legacy alias for "agent finished, awaiting human verification".
+				$a['status']          = 'done';
+				$a['done_at']         = current_time( 'c' );
 				$a['resolution_note'] = sanitize_textarea_field( $params['note'] ?? '' );
 				$found                = true;
 				break;
@@ -573,14 +575,18 @@ final class Annotate_AI {
 	}
 
 	/**
-	 * Clear all resolved annotations.
+	 * Clear annotations the human has already verified.
+	 *
+	 * Also drops `resolved` entries from any pre-existing data, since that
+	 * was the legacy status prior to the open/in_progress/done/verified flow.
 	 *
 	 * @return WP_REST_Response
 	 */
 	public static function clear_resolved(): WP_REST_Response {
 		$annotations = get_option( self::OPTION_ANNOTATIONS, [] );
 		$annotations = array_filter( $annotations, function ( array $a ): bool {
-			return ( $a['status'] ?? 'open' ) !== 'resolved';
+			$status = $a['status'] ?? 'open';
+			return 'verified' !== $status && 'resolved' !== $status;
 		} );
 		update_option( self::OPTION_ANNOTATIONS, array_values( $annotations ), false );
 

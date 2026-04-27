@@ -189,8 +189,8 @@ All endpoints require `manage_options` capability.
 | `POST` | `/annotate-ai/v1/annotations` | Create single annotation. Used by the toolbar in None mode (live save). |
 | `POST` | `/annotate-ai/v1/annotations/batch` | Batch submit + notify agent. Used by the toolbar in webhook/telegram mode. |
 | `PATCH` | `/annotate-ai/v1/annotations/{id}` | Update note, requested_text, and/or requested_changes on an existing annotation. Used by edits in None mode. |
-| `POST` | `/annotate-ai/v1/annotations/{id}/resolve` | Resolve with note (stored as `resolution_note`) |
-| `DELETE` | `/annotate-ai/v1/annotations/resolved` | Clear resolved |
+| `POST` | `/annotate-ai/v1/annotations/{id}/resolve` | Legacy alias for `PATCH /annotations/{id}` with `{"status":"done","resolution_note":"…"}` (sets `status` to `done` and stores the note as `resolution_note`). Prefer the PATCH form. |
+| `DELETE` | `/annotate-ai/v1/annotations/resolved` | Delete annotations the human has verified (status `verified` — also clears any leftover `resolved` from pre-flow data). |
 | `POST` | `/annotate-ai/v1/settings` | Save settings (validates Telegram token, chat ID, webhook URL scheme) |
 
 `requested_changes` is server-sanitised against an allow-list (`font-size`, `color`, `background-color` for v1). Keys outside the allow-list are dropped — extend the list in `Annotate_AI::sanitize_requested_changes()` when the modal grows new controls.

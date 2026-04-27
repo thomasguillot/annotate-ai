@@ -125,8 +125,8 @@ All endpoints require authentication with `manage_options` capability.
 | `POST` | `/annotate-ai/v1/annotations` | Create a single annotation (live save in None mode) |
 | `POST` | `/annotate-ai/v1/annotations/batch` | Submit a batch of annotations (+ notify agent). Returns the saved annotations with their assigned IDs. |
 | `PATCH` | `/annotate-ai/v1/annotations/{id}` | Update any of: `note`, `requested_text`, `requested_changes`, `status` (`open`/`in_progress`/`done`/`verified`), `resolution_note`, `changes` (agent's structured change-log). |
-| `POST` | `/annotate-ai/v1/annotations/{id}/resolve` | Legacy alias for marking done. Prefer the PATCH endpoint with `status: "done"`. |
-| `DELETE` | `/annotate-ai/v1/annotations/resolved` | Clear all resolved annotations |
+| `POST` | `/annotate-ai/v1/annotations/{id}/resolve` | Legacy alias for `PATCH /annotations/{id}` with `{"status":"done", "resolution_note":"…"}` (sets `status` to `done` and stores the note as `resolution_note`). Prefer the PATCH form. |
+| `DELETE` | `/annotate-ai/v1/annotations/resolved` | Delete annotations the human has already verified (status `verified` — also clears any leftover `resolved` from before the new flow). |
 | `POST` | `/annotate-ai/v1/settings` | Update plugin settings |
 
 ### Annotation object
