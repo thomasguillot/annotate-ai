@@ -14,7 +14,7 @@
 		"check-types": "tsc --noEmit",
 		"test:unit": "wp-scripts test-unit-js",
 		"makepot": "wp i18n make-pot . languages/annotate-ai.pot --slug=annotate-ai --domain=annotate-ai --exclude=node_modules,src",
-		"makejson": "wp i18n make-json languages --no-purge",
+		"makejson": "wp i18n make-json languages --no-purge && node bin/fix-json-sources.mjs",
 		"makemo": "wp i18n make-mo languages",
 		"i18n": "npm run makepot && npm run makemo && npm run makejson",
 		"plugin-zip": "wp-scripts plugin-zip"

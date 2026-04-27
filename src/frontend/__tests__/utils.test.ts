@@ -26,21 +26,33 @@ describe( 'cssEscape', () => {
 		expect( cssEscape( 'plain123' ) ).toBe( 'plain123' );
 	} );
 
-	it( 'matches native CSS.escape output for tricky inputs', () => {
-		// Run our cssEscape through the same code path the polyfill would
-		// take by stripping window.CSS.escape and then re-importing — for
-		// jsdom the native CSS.escape is what's typically used. To exercise
-		// the polyfill specifically, call it indirectly: it should at least
-		// agree with the native impl on these well-known cases.
-		const cases = [
-			[ '1leading-digit', '\\31 leading-digit' ],
-			[ '-1', '-\\31 ' ],
-			[ '-', '\\-' ],
-			[ 'foo:bar', 'foo\\:bar' ],
-			[ 'a.b', 'a\\.b' ],
-		];
-		for ( const [ input, expected ] of cases ) {
+	const trickyCases: Array< [ string, string ] > = [
+		[ '1leading-digit', '\\31 leading-digit' ],
+		[ '-1', '-\\31 ' ],
+		[ '-', '\\-' ],
+		[ 'foo:bar', 'foo\\:bar' ],
+		[ 'a.b', 'a\\.b' ],
+	];
+
+	it( 'produces correct output for tricky inputs (native path)', () => {
+		// Goes through window.CSS.escape, which jsdom provides.
+		for ( const [ input, expected ] of trickyCases ) {
 			expect( cssEscape( input ) ).toBe( expected );
+		}
+	} );
+
+	it( 'polyfill branch matches native output', () => {
+		// Force the fallback path by removing window.CSS.escape, run the
+		// same cases, then restore. This exercises the spec-compliant
+		// polyfill rather than jsdom's native implementation.
+		const original = ( window as unknown as { CSS?: typeof CSS } ).CSS;
+		try {
+			delete ( window as unknown as { CSS?: typeof CSS } ).CSS;
+			for ( const [ input, expected ] of trickyCases ) {
+				expect( cssEscape( input ) ).toBe( expected );
+			}
+		} finally {
+			( window as unknown as { CSS?: typeof CSS } ).CSS = original;
 		}
 	} );
 } );
