@@ -20,9 +20,14 @@ final class SanitizationTest extends TestCase {
 	 * @return mixed
 	 */
 	private function call( string $method, array $args = [] ) {
-		// PHP 8.1+ no longer needs setAccessible() for private static method
-		// invocation via Reflection.
 		$ref = new ReflectionMethod( 'Annotate_AI', $method );
+		// composer.json allows PHP 7.4+. Reflection requires setAccessible(true)
+		// to invoke private methods on PHP 7.4 / 8.0; on 8.1+ private members
+		// are already accessible and the call became a no-op (and finally got
+		// deprecated on 8.5).
+		if ( PHP_VERSION_ID < 80100 ) {
+			$ref->setAccessible( true );
+		}
 		return $ref->invoke( null, ...$args );
 	}
 
