@@ -50,10 +50,7 @@ msgstr "Annotate AI Anmerkungsmodus umschalten"
 
 #: annotate-ai.php:352
 msgid "Invalid Telegram bot token format. Expected \"<bot_id>:<secret>\"."
-msgstr ""
-"Ungültiges Telegram-Bot-Token-Format. Erwartet wird \"<bot_id>:"
-"<secret>\".Ungültiges Telegram-Bot-Token-Format. Erwartet wird \"<bot_id>:"
-"<secret>\"."
+msgstr "Ungültiges Telegram-Bot-Token-Format. Erwartet wird \"<bot_id>:<secret>\"."
 
 #: annotate-ai.php:361
 msgid "Telegram chat ID must be numeric."
@@ -81,9 +78,7 @@ msgstr "Benachrichtigungsmethode"
 
 #: build/admin.js:1
 msgid "How should the agent be notified when annotations are submitted?"
-msgstr ""
-"Wie soll der Agent benachrichtigt werden, wenn Anmerkungen gesendet werden?"
-"Wie soll der Agent benachrichtigt werden, wenn Anmerkungen gesendet werden?"
+msgstr "Wie soll der Agent benachrichtigt werden, wenn Anmerkungen gesendet werden?"
 
 #: build/admin.js:1
 msgid "None (agent pulls via REST API)"

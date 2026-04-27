@@ -50,10 +50,7 @@ msgstr "Annotate AI 注釈モードを切り替え"
 
 #: annotate-ai.php:352
 msgid "Invalid Telegram bot token format. Expected \"<bot_id>:<secret>\"."
-msgstr ""
-"Telegram ボットトークンの形式が無効です。\"<bot_id>:<secret>\" 形式が必要で"
-"す。Telegram ボットトークンの形式が無効です。\"<bot_id>:<secret>\" 形式が必要"
-"です。"
+msgstr "Telegram ボットトークンの形式が無効です。\"<bot_id>:<secret>\" 形式が必要です。"
 
 #: annotate-ai.php:361
 msgid "Telegram chat ID must be numeric."

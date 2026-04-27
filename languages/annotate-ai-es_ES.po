@@ -50,10 +50,7 @@ msgstr "Alternar el modo de anotación Annotate AI"
 
 #: annotate-ai.php:352
 msgid "Invalid Telegram bot token format. Expected \"<bot_id>:<secret>\"."
-msgstr ""
-"Formato no válido del token del bot de Telegram. Se esperaba \"<bot_id>:"
-"<secret>\".Formato no válido del token del bot de Telegram. Se esperaba "
-"\"<bot_id>:<secret>\"."
+msgstr "Formato no válido del token del bot de Telegram. Se esperaba \"<bot_id>:<secret>\"."
 
 #: annotate-ai.php:361
 msgid "Telegram chat ID must be numeric."

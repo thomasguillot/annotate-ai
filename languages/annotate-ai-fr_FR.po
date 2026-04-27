@@ -50,10 +50,7 @@ msgstr "Activer/désactiver le mode annotation Annotate AI"
 
 #: annotate-ai.php:352
 msgid "Invalid Telegram bot token format. Expected \"<bot_id>:<secret>\"."
-msgstr ""
-"Format du jeton du bot Telegram invalide. Format attendu : \"<bot_id>:"
-"<secret>\".Format du jeton du bot Telegram invalide. Format attendu : "
-"\"<bot_id>:<secret>\"."
+msgstr "Format du jeton du bot Telegram invalide. Format attendu : \"<bot_id>:<secret>\"."
 
 #: annotate-ai.php:361
 msgid "Telegram chat ID must be numeric."
@@ -113,10 +110,7 @@ msgstr "Copier les instructions pour l’agent"
 
 #: build/admin.js:1
 msgid "Annotations will be POSTed here as JSON when submitted."
-msgstr ""
-"Les annotations seront envoyées ici en JSON via POST lors de la "
-"soumission.Les annotations seront envoyées ici en JSON via POST lors de la "
-"soumission."
+msgstr "Les annotations seront envoyées ici en JSON via POST lors de la soumission."
 
 #: build/admin.js:1
 msgid "Bearer Token"

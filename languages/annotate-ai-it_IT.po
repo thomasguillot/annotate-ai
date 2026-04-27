@@ -50,10 +50,7 @@ msgstr "Attiva/disattiva la modalità annotazione di Annotate AI"
 
 #: annotate-ai.php:352
 msgid "Invalid Telegram bot token format. Expected \"<bot_id>:<secret>\"."
-msgstr ""
-"Formato del token del bot Telegram non valido. Atteso \"<bot_id>:"
-"<secret>\".Formato del token del bot Telegram non valido. Atteso \"<bot_id>:"
-"<secret>\"."
+msgstr "Formato del token del bot Telegram non valido. Atteso \"<bot_id>:<secret>\"."
 
 #: annotate-ai.php:361
 msgid "Telegram chat ID must be numeric."
@@ -81,9 +78,7 @@ msgstr "Metodo di notifica"
 
 #: build/admin.js:1
 msgid "How should the agent be notified when annotations are submitted?"
-msgstr ""
-"Come deve essere notificato l’agente quando le annotazioni vengono inviate?"
-"Come deve essere notificato l'agente quando le annotazioni vengono inviate?"
+msgstr "Come deve essere notificato l’agente quando le annotazioni vengono inviate?"
 
 #: build/admin.js:1
 msgid "None (agent pulls via REST API)"
@@ -115,10 +110,7 @@ msgstr "Copia snippet per l’agente"
 
 #: build/admin.js:1
 msgid "Annotations will be POSTed here as JSON when submitted."
-msgstr ""
-"Le annotazioni verranno inviate qui come JSON tramite POST al momento "
-"dell’invio.Le annotazioni verranno inviate qui come JSON tramite POST al "
-"momento dell'invio."
+msgstr "Le annotazioni verranno inviate qui come JSON tramite POST al momento dell’invio."
 
 #: build/admin.js:1
 msgid "Bearer Token"
