@@ -1,0 +1,9 @@
+{
+	"extends": "plugin:@wordpress/eslint-plugin/recommended",
+	"parserOptions": {
+		"project": "./tsconfig.json"
+	},
+	"rules": {
+		"@wordpress/no-unsafe-wp-apis": "warn"
+	}
+}

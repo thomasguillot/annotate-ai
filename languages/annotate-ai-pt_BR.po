@@ -1,0 +1,471 @@
+# Translation of Annotate AI in Brazilian Portuguese
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Annotate AI 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/annotate-ai\n"
+"POT-Creation-Date: 2026-04-27T12:59:47+00:00\n"
+"PO-Revision-Date: 2026-04-27T09:17:49+00:00\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Domain: annotate-ai\n"
+
+#. Plugin Name of the plugin
+#: annotate-ai.php annotate-ai.php:98 annotate-ai.php:99 build/admin.js:1
+msgid "Annotate AI"
+msgstr "Annotate AI"
+
+#. Plugin URI of the plugin
+#: annotate-ai.php
+msgid "https://github.com/thomasguillot/annotate-ai"
+msgstr ""
+
+#. Description of the plugin
+#: annotate-ai.php
+msgid ""
+"Point-and-click design feedback for AI agents. Annotate any element on your "
+"WordPress site, submit structured feedback, and let your AI agent action it."
+msgstr ""
+
+#. Author of the plugin
+#: annotate-ai.php
+msgid "Thomas Guillot"
+msgstr ""
+
+#. Author URI of the plugin
+#: annotate-ai.php
+msgid "https://thomasguillot.com"
+msgstr ""
+
+#: annotate-ai.php:74 build/frontend.js:1
+msgid "Annotate"
+msgstr "Anotar"
+
+#: annotate-ai.php:77
+msgid "Toggle Annotate AI annotation mode"
+msgstr "Alternar o modo de anotação do Annotate AI"
+
+#: annotate-ai.php:352
+msgid "Invalid Telegram bot token format. Expected \"<bot_id>:<secret>\"."
+msgstr ""
+"Formato inválido do token do bot do Telegram. Esperado \"<bot_id>:"
+"<secret>\".Formato inválido do token do bot do Telegram. Esperado \"<bot_id>:"
+"<secret>\"."
+
+#: annotate-ai.php:361
+msgid "Telegram chat ID must be numeric."
+msgstr "O ID do chat do Telegram deve ser numérico."
+
+#: annotate-ai.php:370
+msgid "Webhook URL must start with http:// or https://."
+msgstr "A URL do webhook deve começar com http:// ou https://."
+
+#: annotate-ai.php:536 annotate-ai.php:567
+msgid "Annotation not found."
+msgstr "Anotação não encontrada."
+
+#: build/admin.js:1
+msgid "Failed to copy."
+msgstr "Falha ao copiar."
+
+#: build/admin.js:1
+msgid "Agent Connection"
+msgstr "Conexão com Agente"
+
+#: build/admin.js:1
+msgid "Notification method"
+msgstr "Método de notificação"
+
+#: build/admin.js:1
+msgid "How should the agent be notified when annotations are submitted?"
+msgstr "Como o agente deve ser notificado quando as anotações forem enviadas?"
+
+#: build/admin.js:1
+msgid "None (agent pulls via REST API)"
+msgstr "Nenhum (o agente consulta via REST API)"
+
+#: build/admin.js:1
+msgid "Webhook URL"
+msgstr "URL de webhook"
+
+#: build/admin.js:1
+msgid "Telegram"
+msgstr "Telegram"
+
+#: build/admin.js:1
+msgid "Your agent should poll this URL on its own schedule:"
+msgstr "Seu agente deve consultar este URL no seu próprio ritmo:"
+
+#: build/admin.js:1
+msgid "Copied"
+msgstr "Copiado"
+
+#: build/admin.js:1
+msgid "Copy URL"
+msgstr "Copiar URL"
+
+#: build/admin.js:1
+msgid "Copy agent snippet"
+msgstr "Copiar trecho do agente"
+
+#: build/admin.js:1
+msgid "Annotations will be POSTed here as JSON when submitted."
+msgstr "As anotações serão enviadas aqui como JSON via POST quando submetidas."
+
+#: build/admin.js:1
+msgid "Bearer Token"
+msgstr "Token Bearer"
+
+#: build/admin.js:1
+msgid "Optional. Sent as Authorization: Bearer <token> header."
+msgstr "Opcional. Enviado como cabeçalho Authorization: Bearer <token>."
+
+#: build/admin.js:1
+msgid "Bot Token"
+msgstr "Token do Bot"
+
+#: build/admin.js:1
+msgid "Telegram bot token (from @BotFather)."
+msgstr "Token do bot do Telegram (obtido em @BotFather)."
+
+#: build/admin.js:1
+msgid "Chat ID"
+msgstr "ID do chat"
+
+#: build/admin.js:1
+msgid "Telegram chat ID where annotations should be sent."
+msgstr "ID do chat do Telegram para o qual as anotações serão enviadas."
+
+#: build/admin.js:1
+msgid "Settings saved."
+msgstr "Configurações salvas."
+
+#: build/admin.js:1
+msgid "Failed to save."
+msgstr "Falha ao salvar."
+
+#: build/admin.js:1
+msgid "Saving…"
+msgstr "Salvando…"
+
+#: build/admin.js:1
+msgid "Save Settings"
+msgstr "Salvar configurações"
+
+#. translators: 1: open annotation count, 2: resolved annotation count.
+#: build/admin.js:2
+msgid "Annotations (%1$d open, %2$d resolved)"
+msgstr "Anotações (%1$d abertas, %2$d resolvidas)"
+
+#: build/admin.js:2
+msgid "Loading annotations…"
+msgstr "Carregando anotações…"
+
+#: build/admin.js:2
+msgid ""
+"No annotations yet. Browse the frontend and use the annotation toolbar to "
+"start."
+msgstr ""
+"Nenhuma anotação ainda. Navegue pelo frontend e use a barra de anotações "
+"para começar."
+
+#: build/admin.js:2
+msgid "Status"
+msgstr "Status"
+
+#: build/admin.js:2
+msgid "Page"
+msgstr "Página"
+
+#: build/admin.js:2
+msgid "Element"
+msgstr "Elemento"
+
+#: build/admin.js:2 build/frontend.js:1
+msgid "Note"
+msgstr "Nota"
+
+#: build/admin.js:2
+msgid "Author"
+msgstr "Autor"
+
+#: build/admin.js:2
+msgid "Actions"
+msgstr "Ações"
+
+#: build/admin.js:2
+msgid "Resolved from admin"
+msgstr "Resolvido pelo administrador"
+
+#: build/admin.js:2
+msgid "Failed to resolve annotation."
+msgstr "Falha ao resolver a anotação."
+
+#. translators: %s: annotation note text.
+#: build/admin.js:3
+msgid "Resolve annotation: %s"
+msgstr "Resolver anotação: %s"
+
+#: build/admin.js:3
+msgid "Resolve"
+msgstr "Resolver"
+
+#: build/admin.js:3
+msgid "Failed to clear resolved annotations."
+msgstr "Falha ao limpar as anotações resolvidas."
+
+#: build/admin.js:3
+msgid "Clear Resolved"
+msgstr "Limpar resolvidas"
+
+#: build/frontend.js:1
+msgid "transparent"
+msgstr "transparente"
+
+#: build/frontend.js:1
+msgid "Selected element:"
+msgstr "Elemento selecionado:"
+
+#: build/frontend.js:1
+msgid "Text"
+msgstr "Texto"
+
+#: build/frontend.js:1
+msgid "Text color"
+msgstr "Cor do texto"
+
+#: build/frontend.js:1
+msgid "Background"
+msgstr "Fundo"
+
+#: build/frontend.js:1
+msgid "Affects"
+msgstr "Afeta"
+
+#: build/frontend.js:1
+msgid "Pick a breakpoint if this issue is specific to one viewport."
+msgstr "Selecione um breakpoint se o problema for específico de um viewport."
+
+#: build/frontend.js:1
+msgid "All breakpoints"
+msgstr "Todos os breakpoints"
+
+#: build/frontend.js:1
+msgid "Mobile only"
+msgstr "Somente mobile"
+
+#: build/frontend.js:1
+msgid "Tablet only"
+msgstr "Somente tablet"
+
+#: build/frontend.js:1
+msgid "Desktop only"
+msgstr "Somente desktop"
+
+#: build/frontend.js:1
+msgid "Notes"
+msgstr "Notas"
+
+#: build/frontend.js:1
+msgid "Anything that doesn’t fit above."
+msgstr "Qualquer coisa que não se encaixe acima."
+
+#: build/frontend.js:1
+msgid "e.g. move this above the hero, hide on mobile"
+msgstr "ex.: mover acima do hero, ocultar em dispositivos móveis"
+
+#: build/frontend.js:1
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: build/frontend.js:1
+msgid "Change at least one value or add a note."
+msgstr "Altere ao menos um valor ou adicione uma nota."
+
+#: build/frontend.js:1
+msgid "Review change"
+msgstr "Revisar alteração"
+
+#: build/frontend.js:1
+msgid "You asked for"
+msgstr "Você pediu"
+
+#: build/frontend.js:1
+msgid "What the agent did"
+msgstr "O que o agente fez"
+
+#: build/frontend.js:1
+msgid "The agent did not leave a summary."
+msgstr "O agente não deixou um resumo."
+
+#: build/frontend.js:1
+msgid "Not quite"
+msgstr "Não exatamente"
+
+#: build/frontend.js:1
+msgid "Looks good"
+msgstr "Está bom"
+
+#: build/frontend.js:1
+msgid "Annotate AI: toggle annotation mode"
+msgstr "Annotate AI: alternar modo de anotação"
+
+#: build/frontend.js:1
+msgid "Annotation mode on — click any element (Esc to exit)"
+msgstr "Modo de anotação ativo — clique em qualquer elemento (Esc para sair)"
+
+#: build/frontend.js:1
+msgid "Annotation mode off"
+msgstr "Modo de anotação inativo"
+
+#. translators: %d: annotation number.
+#: build/frontend.js:2
+msgid "Annotation %d"
+msgstr "Anotação %d"
+
+#. translators: %d: number of annotations sent.
+#: build/frontend.js:3
+msgid "%d annotation sent to agent"
+msgid_plural "%d annotations sent to agent"
+msgstr[0] "%d anotação enviada ao agente"
+msgstr[1] "%d anotações enviadas ao agente"
+
+#. translators: %d: number of annotations saved.
+#: build/frontend.js:4
+msgid "%d annotation saved"
+msgid_plural "%d annotations saved"
+msgstr[0] "%d anotação salva"
+msgstr[1] "%d anotações salvas"
+
+#: build/frontend.js:4
+msgid "Failed to send — try again"
+msgstr "Falha ao enviar — tente novamente"
+
+#: build/frontend.js:4 build/frontend.js:6
+msgid "Failed to save — try again"
+msgstr "Falha ao salvar — tente novamente"
+
+#: build/frontend.js:4
+msgid "Sending…"
+msgstr "Enviando…"
+
+#. translators: %d: number of pending annotations.
+#: build/frontend.js:5
+msgid "Send %d annotation"
+msgid_plural "Send %d annotations"
+msgstr[0] "Enviar %d anotação"
+msgstr[1] "Enviar %d anotações"
+
+#: build/frontend.js:5
+msgid "Add Annotation"
+msgstr "Adicionar anotação"
+
+#: build/frontend.js:5
+msgid "Add"
+msgstr "Adicionar"
+
+#. translators: %d: number of pending annotations.
+#: build/frontend.js:6
+msgid "Annotation added (%d pending)"
+msgid_plural "Annotation added (%d pending)"
+msgstr[0] "Anotação adicionada (%d pendente)"
+msgstr[1] "Anotação adicionada (%d pendentes)"
+
+#: build/frontend.js:6
+msgid "Annotation saved"
+msgstr "Anotação salva"
+
+#. translators: %d: annotation number.
+#: build/frontend.js:7
+msgid "Annotation #%d"
+msgstr "Anotação #%d"
+
+#: build/frontend.js:7
+msgid "Update"
+msgstr "Atualizar"
+
+#: build/frontend.js:7
+msgid "Annotation updated"
+msgstr "Anotação atualizada"
+
+#: build/frontend.js:7
+msgid "Failed to update — try again"
+msgstr "Falha ao atualizar — tente novamente"
+
+#: build/frontend.js:7
+msgid "Marked as verified"
+msgstr "Marcada como verificada"
+
+#: build/frontend.js:7
+msgid "Failed to verify — try again"
+msgstr "Falha ao verificar — tente novamente"
+
+#: build/frontend.js:7
+msgid "Reopened for revision"
+msgstr "Reaberta para revisão"
+
+#: build/frontend.js:7
+msgid "Failed to reopen — try again"
+msgstr "Falha ao reabrir — tente novamente"
+
+#~ msgid "Font size (px)"
+#~ msgstr "Tamanho da fonte (px)"
+
+#~ msgid "Edit annotation %d"
+#~ msgstr "Editar anotação %d"
+
+#~ msgid "What needs to change?"
+#~ msgstr "O que precisa ser alterado ?"
+
+#~ msgid "e.g. This heading should be larger, the spacing is off, wrong colour"
+#~ msgstr ""
+#~ "ex.: este título deveria ser maior, o espaçamento está errado, cor "
+#~ "incorretaex.: este título deveria ser maior, o espaçamento está errado, "
+#~ "cor incorreta"
+
+#~ msgid "Please describe what needs to change."
+#~ msgstr "Descreva o que precisa ser alterado."
+
+#~ msgid "Save %d annotation"
+#~ msgid_plural "Save %d annotations"
+#~ msgstr[0] "Salvar %d anotação"
+#~ msgstr[1] "Salvar %d anotações"
+
+#~ msgid "✓ %d annotations submitted & sent to agent"
+#~ msgstr "✓ %d anotações enviadas e encaminhadas ao agente"
+
+#~ msgid "✓ %d annotations submitted"
+#~ msgstr "✓ %d anotações enviadas"
+
+#~ msgid "✗ Failed to submit — try again"
+#~ msgstr "✗ Falha ao enviar — tente novamente"
+
+#~ msgid "Submitting…"
+#~ msgstr "Enviando…"
+
+#~ msgid "Submit %d annotations"
+#~ msgstr "Enviar %d anotações"
+
+#~ msgid "✓ Annotation added (%d pending)"
+#~ msgstr "✓ Anotação adicionada (%d pendente(s))"
+
+#~ msgid "✓ Annotation updated"
+#~ msgstr "✓ Anotação atualizada"
+
+#~ msgid "General"
+#~ msgstr "Geral"
+
+#~ msgid "Enable annotations"
+#~ msgstr "Ativar anotações"
+
+#~ msgid "Show the annotation toolbar on the frontend for admins."
+#~ msgstr "Mostrar a barra de anotações no frontend para administradores."
+
+#~ msgid "Close"
+#~ msgstr "Fechar"
+
+#~ msgid "Submit"
+#~ msgstr "Enviar"

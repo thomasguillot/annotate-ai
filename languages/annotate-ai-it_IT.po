@@ -1,0 +1,480 @@
+# Translation of Annotate AI in Italian
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Annotate AI 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/annotate-ai\n"
+"POT-Creation-Date: 2026-04-27T12:59:47+00:00\n"
+"PO-Revision-Date: 2026-04-27T09:59:57+00:00\n"
+"Language: it_IT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: annotate-ai\n"
+
+#. Plugin Name of the plugin
+#: annotate-ai.php annotate-ai.php:98 annotate-ai.php:99 build/admin.js:1
+msgid "Annotate AI"
+msgstr "Annotate AI"
+
+#. Plugin URI of the plugin
+#: annotate-ai.php
+msgid "https://github.com/thomasguillot/annotate-ai"
+msgstr ""
+
+#. Description of the plugin
+#: annotate-ai.php
+msgid ""
+"Point-and-click design feedback for AI agents. Annotate any element on your "
+"WordPress site, submit structured feedback, and let your AI agent action it."
+msgstr ""
+
+#. Author of the plugin
+#: annotate-ai.php
+msgid "Thomas Guillot"
+msgstr ""
+
+#. Author URI of the plugin
+#: annotate-ai.php
+msgid "https://thomasguillot.com"
+msgstr ""
+
+#: annotate-ai.php:74 build/frontend.js:1
+msgid "Annotate"
+msgstr "Annota"
+
+#: annotate-ai.php:77
+msgid "Toggle Annotate AI annotation mode"
+msgstr "Attiva/disattiva la modalità annotazione di Annotate AI"
+
+#: annotate-ai.php:352
+msgid "Invalid Telegram bot token format. Expected \"<bot_id>:<secret>\"."
+msgstr ""
+"Formato del token del bot Telegram non valido. Atteso \"<bot_id>:"
+"<secret>\".Formato del token del bot Telegram non valido. Atteso \"<bot_id>:"
+"<secret>\"."
+
+#: annotate-ai.php:361
+msgid "Telegram chat ID must be numeric."
+msgstr "L'ID chat di Telegram deve essere numerico."
+
+#: annotate-ai.php:370
+msgid "Webhook URL must start with http:// or https://."
+msgstr "L'URL del webhook deve iniziare con http:// o https://."
+
+#: annotate-ai.php:536 annotate-ai.php:567
+msgid "Annotation not found."
+msgstr "Annotazione non trovata."
+
+#: build/admin.js:1
+msgid "Failed to copy."
+msgstr "Copia non riuscita."
+
+#: build/admin.js:1
+msgid "Agent Connection"
+msgstr "Connessione agente"
+
+#: build/admin.js:1
+msgid "Notification method"
+msgstr "Metodo di notifica"
+
+#: build/admin.js:1
+msgid "How should the agent be notified when annotations are submitted?"
+msgstr ""
+"Come deve essere notificato l’agente quando le annotazioni vengono inviate?"
+"Come deve essere notificato l'agente quando le annotazioni vengono inviate?"
+
+#: build/admin.js:1
+msgid "None (agent pulls via REST API)"
+msgstr "Nessuno (l'agente recupera tramite REST API)"
+
+#: build/admin.js:1
+msgid "Webhook URL"
+msgstr "URL webhook"
+
+#: build/admin.js:1
+msgid "Telegram"
+msgstr "Telegram"
+
+#: build/admin.js:1
+msgid "Your agent should poll this URL on its own schedule:"
+msgstr "Il tuo agente deve interrogare questo URL secondo i suoi tempi:"
+
+#: build/admin.js:1
+msgid "Copied"
+msgstr "Copiato"
+
+#: build/admin.js:1
+msgid "Copy URL"
+msgstr "Copia URL"
+
+#: build/admin.js:1
+msgid "Copy agent snippet"
+msgstr "Copia snippet per l’agente"
+
+#: build/admin.js:1
+msgid "Annotations will be POSTed here as JSON when submitted."
+msgstr ""
+"Le annotazioni verranno inviate qui come JSON tramite POST al momento "
+"dell’invio.Le annotazioni verranno inviate qui come JSON tramite POST al "
+"momento dell'invio."
+
+#: build/admin.js:1
+msgid "Bearer Token"
+msgstr "Token Bearer"
+
+#: build/admin.js:1
+msgid "Optional. Sent as Authorization: Bearer <token> header."
+msgstr "Facoltativo. Inviato come header Authorization: Bearer <token>."
+
+#: build/admin.js:1
+msgid "Bot Token"
+msgstr "Token del bot"
+
+#: build/admin.js:1
+msgid "Telegram bot token (from @BotFather)."
+msgstr "Token del bot Telegram (da @BotFather)."
+
+#: build/admin.js:1
+msgid "Chat ID"
+msgstr "ID chat"
+
+#: build/admin.js:1
+msgid "Telegram chat ID where annotations should be sent."
+msgstr "ID chat di Telegram a cui inviare le annotazioni."
+
+#: build/admin.js:1
+msgid "Settings saved."
+msgstr "Impostazioni salvate."
+
+#: build/admin.js:1
+msgid "Failed to save."
+msgstr "Salvataggio non riuscito."
+
+#: build/admin.js:1
+msgid "Saving…"
+msgstr "Salvataggio…"
+
+#: build/admin.js:1
+msgid "Save Settings"
+msgstr "Salva impostazioni"
+
+#. translators: 1: open annotation count, 2: resolved annotation count.
+#: build/admin.js:2
+msgid "Annotations (%1$d open, %2$d resolved)"
+msgstr "Annotazioni (%1$d aperte, %2$d risolte)"
+
+#: build/admin.js:2
+msgid "Loading annotations…"
+msgstr "Caricamento annotazioni…"
+
+#: build/admin.js:2
+msgid ""
+"No annotations yet. Browse the frontend and use the annotation toolbar to "
+"start."
+msgstr ""
+"Nessuna annotazione ancora. Naviga nel frontend e usa la barra delle "
+"annotazioni per iniziare."
+
+#: build/admin.js:2
+msgid "Status"
+msgstr "Stato"
+
+#: build/admin.js:2
+msgid "Page"
+msgstr "Pagina"
+
+#: build/admin.js:2
+msgid "Element"
+msgstr "Elemento"
+
+#: build/admin.js:2 build/frontend.js:1
+msgid "Note"
+msgstr "Nota"
+
+#: build/admin.js:2
+msgid "Author"
+msgstr "Autore"
+
+#: build/admin.js:2
+msgid "Actions"
+msgstr "Azioni"
+
+#: build/admin.js:2
+msgid "Resolved from admin"
+msgstr "Risolta dall'amministrazione"
+
+#: build/admin.js:2
+msgid "Failed to resolve annotation."
+msgstr "Risoluzione dell'annotazione non riuscita."
+
+#. translators: %s: annotation note text.
+#: build/admin.js:3
+msgid "Resolve annotation: %s"
+msgstr "Risolvi annotazione: %s"
+
+#: build/admin.js:3
+msgid "Resolve"
+msgstr "Risolvi"
+
+#: build/admin.js:3
+msgid "Failed to clear resolved annotations."
+msgstr "Cancellazione delle annotazioni risolte non riuscita."
+
+#: build/admin.js:3
+msgid "Clear Resolved"
+msgstr "Cancella risolte"
+
+#: build/frontend.js:1
+msgid "transparent"
+msgstr "trasparente"
+
+#: build/frontend.js:1
+msgid "Selected element:"
+msgstr "Elemento selezionato:"
+
+#: build/frontend.js:1
+msgid "Text"
+msgstr "Testo"
+
+#: build/frontend.js:1
+msgid "Text color"
+msgstr "Colore del testo"
+
+#: build/frontend.js:1
+msgid "Background"
+msgstr "Sfondo"
+
+#: build/frontend.js:1
+msgid "Affects"
+msgstr "Interessa"
+
+#: build/frontend.js:1
+msgid "Pick a breakpoint if this issue is specific to one viewport."
+msgstr "Seleziona un breakpoint se il problema riguarda un solo viewport."
+
+#: build/frontend.js:1
+msgid "All breakpoints"
+msgstr "Tutti i breakpoint"
+
+#: build/frontend.js:1
+msgid "Mobile only"
+msgstr "Solo mobile"
+
+#: build/frontend.js:1
+msgid "Tablet only"
+msgstr "Solo tablet"
+
+#: build/frontend.js:1
+msgid "Desktop only"
+msgstr "Solo desktop"
+
+#: build/frontend.js:1
+msgid "Notes"
+msgstr "Note"
+
+#: build/frontend.js:1
+msgid "Anything that doesn’t fit above."
+msgstr "Tutto ciò che non rientra nei campi precedenti."
+
+#: build/frontend.js:1
+msgid "e.g. move this above the hero, hide on mobile"
+msgstr "es. spostalo sopra l’hero, nascondilo su mobile"
+
+#: build/frontend.js:1
+msgid "Cancel"
+msgstr "Annulla"
+
+#: build/frontend.js:1
+msgid "Change at least one value or add a note."
+msgstr "Modifica almeno un valore o aggiungi una nota."
+
+#: build/frontend.js:1
+msgid "Review change"
+msgstr "Rivedi la modifica"
+
+#: build/frontend.js:1
+msgid "You asked for"
+msgstr "Hai chiesto"
+
+#: build/frontend.js:1
+msgid "What the agent did"
+msgstr "Cosa ha fatto l’agente"
+
+#: build/frontend.js:1
+msgid "The agent did not leave a summary."
+msgstr "L’agente non ha lasciato un riepilogo."
+
+#: build/frontend.js:1
+msgid "Not quite"
+msgstr "Non proprio"
+
+#: build/frontend.js:1
+msgid "Looks good"
+msgstr "Va bene"
+
+#: build/frontend.js:1
+msgid "Annotate AI: toggle annotation mode"
+msgstr "Annotate AI: attiva/disattiva la modalità annotazione"
+
+#: build/frontend.js:1
+msgid "Annotation mode on — click any element (Esc to exit)"
+msgstr ""
+"Modalità annotazione attiva — clicca un elemento qualsiasi (Esc per "
+"uscire)Modalità annotazione ATTIVA — clicca un elemento qualsiasi (ESC per "
+"uscire)"
+
+#: build/frontend.js:1
+msgid "Annotation mode off"
+msgstr "Modalità annotazione disattivata"
+
+#. translators: %d: annotation number.
+#: build/frontend.js:2
+msgid "Annotation %d"
+msgstr "Annotazione %d"
+
+#. translators: %d: number of annotations sent.
+#: build/frontend.js:3
+msgid "%d annotation sent to agent"
+msgid_plural "%d annotations sent to agent"
+msgstr[0] "%d annotazione inviata all’agente"
+msgstr[1] "%d annotazioni inviate all’agente"
+
+#. translators: %d: number of annotations saved.
+#: build/frontend.js:4
+msgid "%d annotation saved"
+msgid_plural "%d annotations saved"
+msgstr[0] "%d annotazione salvata"
+msgstr[1] "%d annotazioni salvate"
+
+#: build/frontend.js:4
+msgid "Failed to send — try again"
+msgstr "Invio non riuscito — riprova"
+
+#: build/frontend.js:4 build/frontend.js:6
+msgid "Failed to save — try again"
+msgstr "Salvataggio non riuscito — riprova"
+
+#: build/frontend.js:4
+msgid "Sending…"
+msgstr "Invio in corso…"
+
+#. translators: %d: number of pending annotations.
+#: build/frontend.js:5
+msgid "Send %d annotation"
+msgid_plural "Send %d annotations"
+msgstr[0] "Invia %d annotazione"
+msgstr[1] "Invia %d annotazioni"
+
+#: build/frontend.js:5
+msgid "Add Annotation"
+msgstr "Aggiungi annotazione"
+
+#: build/frontend.js:5
+msgid "Add"
+msgstr "Aggiungi"
+
+#. translators: %d: number of pending annotations.
+#: build/frontend.js:6
+msgid "Annotation added (%d pending)"
+msgid_plural "Annotation added (%d pending)"
+msgstr[0] "Annotazione aggiunta (%d in attesa)"
+msgstr[1] "Annotazione aggiunta (%d in attesa)"
+
+#: build/frontend.js:6
+msgid "Annotation saved"
+msgstr "Annotazione salvata"
+
+#. translators: %d: annotation number.
+#: build/frontend.js:7
+msgid "Annotation #%d"
+msgstr "Annotazione n. %d"
+
+#: build/frontend.js:7
+msgid "Update"
+msgstr "Aggiorna"
+
+#: build/frontend.js:7
+msgid "Annotation updated"
+msgstr "Annotazione aggiornata"
+
+#: build/frontend.js:7
+msgid "Failed to update — try again"
+msgstr "Aggiornamento non riuscito — riprova"
+
+#: build/frontend.js:7
+msgid "Marked as verified"
+msgstr "Contrassegnata come verificata"
+
+#: build/frontend.js:7
+msgid "Failed to verify — try again"
+msgstr "Verifica non riuscita — riprova"
+
+#: build/frontend.js:7
+msgid "Reopened for revision"
+msgstr "Riaperta per la revisione"
+
+#: build/frontend.js:7
+msgid "Failed to reopen — try again"
+msgstr "Riapertura non riuscita — riprova"
+
+#~ msgid "Font size (px)"
+#~ msgstr "Dimensione del testo (px)"
+
+#~ msgid "Edit annotation %d"
+#~ msgstr "Modifica annotazione %d"
+
+#~ msgid "What needs to change?"
+#~ msgstr "Cosa deve essere modificato?"
+
+#~ msgid "e.g. This heading should be larger, the spacing is off, wrong colour"
+#~ msgstr ""
+#~ "es. questo titolo dovrebbe essere più grande, la spaziatura non va bene, "
+#~ "colore sbagliatoes. questo titolo dovrebbe essere più grande, la "
+#~ "spaziatura non va bene, colore sbagliato"
+
+#~ msgid "Please describe what needs to change."
+#~ msgstr "Descrivi cosa deve essere modificato."
+
+#~ msgid "Save %d annotation"
+#~ msgid_plural "Save %d annotations"
+#~ msgstr[0] "Salva %d annotazione"
+#~ msgstr[1] "Salva %d annotazioni"
+
+#~ msgid "✓ %d annotations submitted & sent to agent"
+#~ msgstr "✓ %d annotazioni inviate e inoltrate all'agente"
+
+#~ msgid "✓ %d annotations submitted"
+#~ msgstr "✓ %d annotazioni inviate"
+
+#~ msgid "✗ Failed to submit — try again"
+#~ msgstr "✗ Invio non riuscito — riprova"
+
+#~ msgid "Submitting…"
+#~ msgstr "Invio in corso…"
+
+#~ msgid "Submit %d annotations"
+#~ msgstr "Invia %d annotazioni"
+
+#~ msgid "✓ Annotation added (%d pending)"
+#~ msgstr "✓ Annotazione aggiunta (%d in attesa)"
+
+#~ msgid "✓ Annotation updated"
+#~ msgstr "✓ Annotazione aggiornata"
+
+#~ msgid "General"
+#~ msgstr "Generale"
+
+#~ msgid "Enable annotations"
+#~ msgstr "Attiva le annotazioni"
+
+#~ msgid "Show the annotation toolbar on the frontend for admins."
+#~ msgstr ""
+#~ "Mostra la barra delle annotazioni nel frontend per gli amministratori."
+
+#~ msgid "Close"
+#~ msgstr "Chiudi"
+
+#~ msgid "Submit"
+#~ msgstr "Invia"
